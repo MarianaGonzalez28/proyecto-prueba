@@ -1,0 +1,48 @@
+{% extends "inicio/encabezado.html" %}
+{% load static %}
+{% block titulo %} Consulta de Comentarios {% endblock %}
+
+{% block imagen %}<img src="{% static 'inicio/images/comentarios.png' %}"> {% endblock %}
+{% block barra_titulo %} Consulta de Comentarios {% endblock %}
+
+{% block encabezado %}
+			<!--Encabezado -->
+			<div class="page-header">
+				<div class="page-title">
+					<h3>Comentarios
+				    <small>Lista de Comentarios</small></h3>
+				</div>
+			</div>
+			<!-- /Encabezado-->
+{% endblock %}
+
+{% block contenido %}
+<!-- Contenido Principal-->
+<table class="table table-bordered table-striped">
+	<thead>
+		<tr>
+			<th>Usuario</th>
+			<th>Comentario</th>
+			<th>Editar</th>
+			<th>Eliminar</th>
+		</tr>
+	</thead>
+	<tbody>
+		{% for comentario in comentarios %}
+		<tr>
+			<td class="text-semibold">{{ comentario.usuario }}</td>
+			<td class="muted">{{ comentario. }}</td>
+			<td>
+				
+				<a href="#" class="btn btn-sm btn-warning">Editar</a>
+			</td>
+			<td>
+				
+				<a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+			</td>
+		</tr>
+		{% endfor %}
+	</tbody>
+</table>
+<!-- /Contenido Principal-->
+{% endblock %}
