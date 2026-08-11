@@ -31,14 +31,12 @@
 		{% for comentario in comentarios %}
 		<tr>
 			<td class="text-semibold">{{ comentario.usuario }}</td>
-			<td class="muted">{{ comentario. }}</td>
+			<td class="muted">{{ comentario.mensaje }}</td>
 			<td>
-				
-				<a href="#" class="btn btn-sm btn-warning">Editar</a>
+				<a href="{% url 'editar' comentario.id %}" class="btn btn-sm btn-warning">Editar</a>
 			</td>
 			<td>
-				
-				<a href="#" class="btn btn-sm btn-danger">Eliminar</a>
+				<a href="{% url 'eliminar' comentario.id %}" class="btn btn-sm btn-danger">Eliminar</a>
 			</td>
 		</tr>
 		{% endfor %}
